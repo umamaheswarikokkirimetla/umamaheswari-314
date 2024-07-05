@@ -1,0 +1,31 @@
+#User function Template for python3
+class Solution:
+    def print2largest(self, arr):
+        # Code Here
+        sl=-1
+        n=len(arr)
+        largest=arr[0]
+        for i in range(n):
+            if arr[i]>largest:
+                sl=largest
+                largest=arr[i]
+            else:
+                if arr[i]<largest and arr[i]>sl:
+                    sl=arr[i]
+        return sl
+        
+
+
+#{ 
+ # Driver Code Starts
+# Initial Template for Python 3
+
+if __name__ == "__main__":
+    t = int(input())
+    for _ in range(t):
+        arr = list(map(int, input().split()))
+        ob = Solution()
+        ans = ob.print2largest(arr)
+        print(ans)
+
+# } Driver Code Ends
