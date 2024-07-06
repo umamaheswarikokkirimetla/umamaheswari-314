@@ -1,0 +1,16 @@
+class Solution:
+    def moveZeroes(self, arr: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n=len(arr)
+        temp=[]
+        for i in range(n):
+            if arr[i] != 0:
+                temp.append(arr[i])
+        for i in range(len(temp)):
+            arr[i]=temp[i]
+        for i in range(len(temp),n):
+            arr[i]=0
+        return arr
+        
