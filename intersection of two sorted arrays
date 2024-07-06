@@ -1,0 +1,21 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def findArrayIntersection(arr: list, n: int, brr: list, m: int):
+    # Write your code here
+    # Return a list containing all the common elements in arr and brr.
+    i,j=0,0
+    u=[]
+    while i<n and j<m:
+        if arr[i]<brr[j]:
+            i+=1
+        elif brr[j]<arr[i]:
+            j+=1
+        else:
+            u.append(arr[i])
+            i+=1
+            j+=1
+    return u
+    
