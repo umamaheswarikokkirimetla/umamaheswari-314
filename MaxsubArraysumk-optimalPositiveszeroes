@@ -1,0 +1,16 @@
+def longestSubarrayWithSumK(a: [int], k: int) -> int:
+    # Write your code here
+    l,r=0,0
+    sum=a[0]
+    maxLen=0
+    n=len(a)
+    while r<n:
+        while l<=r and sum>k:
+            sum-=a[l]
+            l+=1
+        if sum==k:
+            maxLen=max(maxLen,r-l+1)
+        r+=1
+        if r<n:
+            sum+=a[r]
+    return maxLen
